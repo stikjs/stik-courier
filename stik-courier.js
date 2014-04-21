@@ -1,8 +1,8 @@
 // ==========================================================================
-// Project:   Stik.js - JavaScript Separation Of Concerns
+// Project:   Stik Courier - Messaging system for Stik.js
 // Copyright: Copyright 2013-2014 Lukas Alexandre
 // License:   Licensed under MIT license
-//            See https://github.com/stikjs/stik.js/blob/master/LICENSE
+//            See https://github.com/stikjs/stik-courier/blob/master/LICENSE
 // ==========================================================================
 
 // Version: 0.1.0 | From: 21-04-2014
