@@ -37,9 +37,9 @@
   },
   "banner": {
     "divider": "// ==========================================================================\n",
-    "project": "// Project:   Stik.js - JavaScript Separation Of Concerns\n",
+    "project": "// Project:   Stik Courier - Messaging system for Stik.js\n",
     "copyright": "// Copyright: Copyright 2013-2014 Lukas Alexandre\n",
     "license": "// License:   Licensed under MIT license\n",
-    "licenseLink": "//            See https://github.com/stikjs/stik.js/blob/master/LICENSE\n"
+    "licenseLink": "//            See https://github.com/stikjs/stik-courier/blob/master/LICENSE\n"
   }
 }
