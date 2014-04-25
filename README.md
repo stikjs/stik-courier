@@ -1,4 +1,7 @@
 #$courier
+
+[![Build Status](https://travis-ci.org/stikjs/stik-courier.svg?branch=master)](https://travis-ci.org/stikjs/stik-courier)
+
 Enables a controller/behavior to send and receive messages from another controller/behavior.
 
 ##Using it
