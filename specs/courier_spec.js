@@ -1,4 +1,10 @@
 describe("Courier", function(){
+  beforeEach(function(){
+    stik.labs.boundary({
+      name: "$courier"
+    }).run().reset();
+  });
+
   describe("#$receive", function(){
     it("should be able to send to one box", function(){
       var courier,
@@ -137,23 +143,38 @@ describe("Courier", function(){
       expect(receiver).toHaveBeenCalledWith(message);
     });
 
-    it("should be able to wildcard a message", function(){
+    it("should be able to wildcard a sender", function(){
       var courier,
-          message = "some message",
           newReceiver = jasmine.createSpy("newReceiver"),
-          addedReceiver = jasmine.createSpy("addedReceiver");
+          removedReceiver = jasmine.createSpy("addedReceiver");
 
       courier = stik.labs.boundary({
         name: "$courier"
       }).run();
 
-      courier.receive("message-new", newReceiver);
-      courier.receive("message-added", addedReceiver);
+      courier.receive("message:new:item", newReceiver);
+      courier.receive("message:removed:item", removedReceiver);
 
-      courier.send("message-*", message);
+      courier.send(/message:.*:item/, {});
 
-      expect(newReceiver).toHaveBeenCalledWith(message);
-      expect(addedReceiver).toHaveBeenCalledWith(message);
+      expect(newReceiver).toHaveBeenCalled();
+      expect(removedReceiver).toHaveBeenCalled();
+    });
+
+    it("should be able to wildcard a receiver", function(){
+      var courier,
+          receiver = jasmine.createSpy("receiver");
+
+      courier = stik.labs.boundary({
+        name: "$courier"
+      }).run();
+
+      courier.receive(/message:.*:item/, receiver);
+
+      courier.send("message:new:item", {});
+      courier.send("message:updated:item", {});
+
+      expect(receiver.calls.length).toEqual(2);
     });
   });
 });

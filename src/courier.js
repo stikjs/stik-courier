@@ -8,7 +8,7 @@ window.stik.boundary({
 
     obj.receive = function receive( box, opener ){
       var subscription = createSubscription({
-        box: box, opener: opener
+        box: stringify( box ), opener: opener
       });
 
       subscriptions[ box ] = ( subscriptions[ box ] || [] );
@@ -32,12 +32,17 @@ window.stik.boundary({
       if ( !foundAny ) { throw "Stik: No receiver registered for '" + box + "'"; }
     };
 
-    function fetchSubscriptions( box, callback ){
-      var pattern = new RegExp( box );
+    obj.reset = function reset() { subscriptions = {}; }
 
-      for ( var sub in subscriptions ) {
-        if ( pattern.exec( sub ) ) {
-          callback( subscriptions[ sub ] );
+    function fetchSubscriptions( box, callback ){
+      var senderPattern = new RegExp( box ),
+          receiverPattern;
+
+      for ( var name in subscriptions ) {
+        receiverPattern = new RegExp( stringify( name ) )
+        if ( senderPattern.exec( stringify( name ) ) ||
+             receiverPattern.exec( stringify( box ) ) ) {
+          callback( subscriptions[ name ] );
         }
       }
     }
@@ -59,6 +64,11 @@ window.stik.boundary({
       ).toString( 16 );
 
       return spec;
+    }
+
+    function stringify( name ){
+      return name.toString()
+                 .replace(/(^\/|\/$)/g, "");
     }
 
     return obj;
