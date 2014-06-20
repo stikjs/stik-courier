@@ -176,5 +176,17 @@ describe("Courier", function(){
 
       expect(receiver.calls.length).toEqual(2);
     });
+
+    it("should not raise when throwOnMissing is false", function(){
+      var courier;
+
+      courier = stik.labs.boundary({
+        name: "$courier"
+      }).run();
+
+      expect(function(){
+        courier.send("missing-message", {}, {throwOnMissing: false});
+      }).not.toThrow();
+    });
   });
 });

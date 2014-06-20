@@ -17,9 +17,11 @@ window.stik.boundary({
       return unsubscribe.bind( {}, subscription );
     };
 
-    obj.send = function send( box, message ){
+    obj.send = function send( box, message, options ){
       var i = 0,
           foundAny = false;
+
+      options = options || { throwOnMissing: true };
 
       fetchSubscriptions( box , function( openers ){
         foundAny = true;
@@ -29,7 +31,9 @@ window.stik.boundary({
         }
       });
 
-      if ( !foundAny ) { throw "Stik: No receiver registered for '" + box + "'"; }
+      if ( !foundAny && options.throwOnMissing === true ) {
+        throw "Stik: No receiver registered for '" + box + "'";
+      }
     };
 
     obj.reset = function reset() { subscriptions = {}; }
@@ -59,7 +63,7 @@ window.stik.boundary({
     }
 
     function createSubscription( spec ){
-      spec.id = '#' + Math.floor(
+      spec.id = "#" + Math.floor(
         Math.random()*16777215
       ).toString( 16 );
 

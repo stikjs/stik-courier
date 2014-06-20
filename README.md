@@ -12,6 +12,12 @@ stik.controller("MessageCtrl", "Sender", function($courier){
   $courier.send("new-message", {
     your: "delegation"
   });
+
+  // to avoid execption while sending messages with
+  // not yet defined receivers set throwOnMissing: false
+  $courier.send("new-message", {
+    your: "delegation"
+  }, {throwOnMissing: false});
 });
 
 stik.controller("MessageCtrl", "Receiver", function($courier){

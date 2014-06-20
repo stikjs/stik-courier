@@ -1,6 +1,6 @@
 {
   "name": "stik-courier.js",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Messaging system for Stik.js",
   "main": "stik.js",
   "scripts": {
