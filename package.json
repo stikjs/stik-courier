@@ -4,7 +4,7 @@
   "description": "Messaging system for Stik.js",
   "main": "dist/stik-courier.js",
   "scripts": {
-    "test": "grunt test"
+    "test": "gulp test"
   },
   "repository": {
     "type": "git",
