@@ -35,12 +35,5 @@
     "gulp-jasmine": "^0.2.0",
     "gulp-uglify": "^0.3.1",
     "gulp": "^3.8.2"
-  },
-  "banner": {
-    "divider": "// ==========================================================================\n",
-    "project": "// Project:   Stik Courier - Messaging system for Stik.js\n",
-    "copyright": "// Copyright: Copyright 2013-2014 Lukas Alexandre\n",
-    "license": "// License:   Licensed under MIT license\n",
-    "licenseLink": "//            See https://github.com/stikjs/stik-courier/blob/master/LICENSE\n"
   }
 }
