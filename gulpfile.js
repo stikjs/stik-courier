@@ -23,4 +23,13 @@ gulp.task("pack", function(){
       .pipe(concat("stik-courier.min.js"))
       .pipe(uglify())
       .pipe(gulp.dest("dist"));
+
+  // for those who don't use npm
+  var files = ["node_modules/courier.js/dist/courier.js", "src/boundary.js"];
+  gulp.src(files)
+      .pipe(concat("stik-courier-full.js"))
+      .pipe(gulp.dest("dist"))
+      .pipe(concat("stik-courier-full.min.js"))
+      .pipe(uglify())
+      .pipe(gulp.dest("dist"));
 });
