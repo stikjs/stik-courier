@@ -8,15 +8,7 @@ var gulp = require("gulp"),
 var d = new Date();
 var releaseDate = d.getDate() + "-" + (d.getMonth() + 1) + "-" + d.getFullYear()
 
-var banner = [
-  "<%= pkg.banner.divider %>",
-  "<%= pkg.banner.project %>",
-  "<%= pkg.banner.copyright %>",
-  "<%= pkg.banner.license %>",
-  "<%= pkg.banner.licenseLink %>",
-  "<%= pkg.banner.divider %>",
-  "\n// Version: <%= pkg.version %> | From: <%= date %>\n",
-  ""].join("\n");
+var banner = "// Stik-courier - Version: <%= pkg.version %> | From: <%= date %>\n";
 
 gulp.task("test", function(){
   gulp.src("specs/*_spec.js")
