@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/stikjs/stik-courier.svg?branch=master)](https://travis-ci.org/stikjs/stik-courier)
 
-Enables a controller/behavior to send and receive messages from another controller/behavior.
+Enables a controller/behavior to send and receive messages from another controller/behavior. It uses [courier.js](https://github.com/lukelex/courier.js) under the hood.
 
 ##Using it
 ```javascript
@@ -41,3 +41,13 @@ stik.controller("MessageCtrl", "OneTimeReceiver", function($courier){
   });
 });
 ```
+
+##Installing
+
+If you use NPM (you should) just do:
+
+```bash
+$ npm install --save stik-courier
+```
+
+Otherwise, just download and and add the file to your page. If you're already using `courier.js` then you only need the `./dist/stik-courier(.min).js` file. If not, then use the `./dist/stik-courier-full(.min).js`
