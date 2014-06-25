@@ -1,7 +1,7 @@
 GLOBAL.window = {};
 
-require("stik-core.js");
-require("stik-labs.js");
+require("stik-core");
+require("stik-labs");
 require("courier.js");
 require("../src/boundary");
 

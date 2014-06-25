@@ -1,5 +1,5 @@
 {
-  "name": "stik-courier.js",
+  "name": "stik-courier",
   "version": "0.4.0",
   "description": "Messaging system for Stik.js",
   "main": "dist/stik-courier.js",
@@ -23,13 +23,13 @@
   "bugs": {
     "url": "https://github.com/stikjs/stik-courier/issues"
   },
-  "homepage": "https://github.com/stikjs/stik-courier",
+  "homepage": "http://stikjs.com/docs/courier",
   "dependencies": {
-    "stik-core.js": "^1.0.1",
+    "stik-core": "^1.0.3",
     "courier.js": "^0.3.0"
   },
   "devDependencies": {
-    "stik-labs.js": "^0.1.0",
+    "stik-labs": "^0.2.0",
     "gulp-concat": "^2.2.0",
     "gulp-header": "^1.0.2",
     "gulp-jasmine": "^0.2.0",
