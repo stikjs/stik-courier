@@ -1,4 +1,4 @@
-// Stik-courier - Version: 0.4.0 | From: 25-6-2014
+// Stik-courier - Version: 0.5.0 | From: 21-7-2014
 (function( stik, Courier ){
   stik.boundary({
     as: "$courier",

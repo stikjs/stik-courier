@@ -1,6 +1,6 @@
 {
   "name": "stik-courier",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Messaging system for Stik.js",
   "main": "dist/stik-courier.js",
   "scripts": {
@@ -26,7 +26,7 @@
   "homepage": "http://stikjs.com/docs/courier",
   "dependencies": {
     "stik-core": "^1.0.3",
-    "courier.js": "^0.3.0"
+    "courier.js": "^0.4.0"
   },
   "devDependencies": {
     "stik-labs": "^0.2.0",
